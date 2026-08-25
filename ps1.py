@@ -33,8 +33,6 @@ def read_telemetry(file_path):
 
         # TODO: ignore the lines that contain comments starting with `#`
 
-        # TODO: ignore any empty lines or lines that do not contain the expected number of data fields
-
         # TODO: call `parse_telemetry_line` function to parse the line
 
         # TODO: handle the function return value appropriately, i.e. append to `telemetry_logs` if valid
@@ -63,8 +61,6 @@ def parse_telemetry_line(line):
     # TODO: strip and split the line into its components
 
     # TODO: ensure that the line is valid, i.e., it contains exactly 7 parts that are all numerical
-
-    # TODO: ignore lines that do not contain the expected number of data fields
 
     # TODO: convert the components to their respective types and create the dictionary
 
