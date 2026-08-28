@@ -23,7 +23,7 @@ def read_telemetry(file_path):
 
     try:
 
-        pass  # remove this line when you implement the function
+        pass  # TODO: remove this line when you implement the function!!
 
         # TODO: open and read the telemetry data file at `file_path` line by line
 
@@ -66,7 +66,7 @@ def parse_telemetry_line(line):
 
     # TODO: return the dictionary if valid, otherwise return False
 
-    # TODO: handle errors gracefully!
+    # NOTE: handle errors gracefully!
 
     return False
 
@@ -111,6 +111,8 @@ def calculate_average_temperature(telemetry_logs):
 def write_flight_summary(telemetry_logs, count_invalid, apogee_event, min_voltage, average_temperature, file_path):
     """
     Writes a flight summary to `file_path` with maximum altitude, minimum voltage, average temperature.
+
+    If no valid data is found, do not output the maximum altitude, minimum voltage, or average temperature.
     """
 
     pass
@@ -136,9 +138,9 @@ if __name__ == "__main__":
     output_file = "flight_summary.txt"
 
     telemetry_logs, count_invalid = read_telemetry(input_file)
-    if not telemetry_logs:
-        sys.exit(1)
-    apogee_event = find_apogee_event(telemetry_logs)
-    min_voltage = get_min_voltage(telemetry_logs)
-    average_temperature = calculate_average_temperature(telemetry_logs)
+    apogee_event, min_voltage, average_temperature = None, None, None
+    if telemetry_logs:
+        apogee_event = find_apogee_event(telemetry_logs)
+        min_voltage = get_min_voltage(telemetry_logs)
+        average_temperature = calculate_average_temperature(telemetry_logs)
     write_flight_summary(telemetry_logs, count_invalid, apogee_event, min_voltage, average_temperature, output_file)
