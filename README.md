@@ -41,7 +41,7 @@ You have graduated from CY300 and joined the SPEAR hypersonic rocket team. The l
 
 4. Validate the Data: A valid line must contain exactly seven parts. Timestamp should be integer. All other parts (altitude, temperature etc.) must be convertible to a float. Skip lines that do not conform to the expected format, e.g. `MALFORMED_DATA`.
 
-5. Create the dictionary: If a line is valid, convert the altitude, temperature, voltage, pitch, yaw, roll to floats and add them to a dictionary representing a data point. If no valid data is found, set the maximum altitude, minimum voltage, and average temperature to 0.0.
+5. Create the dictionary: If a line is valid, convert the altitude, temperature, voltage, pitch, yaw, roll to floats and add them to a dictionary representing a data point. If invalid data is found, skip the line and increment the invalid count.
 
 6. Calculate Statistics: Write functions to calculate the following statistics from the list of valid data points:
 
